@@ -1,0 +1,92 @@
+---
+interface Props {
+  title: string;
+  description?: string;
+  keywords?: string;
+  canonical?: string;
+  lastUpdated?: string;
+}
+
+const { title, description, keywords, canonical, lastUpdated } = Astro.props;
+---
+
+<article class="legal-content">
+  <header>
+    <h1>{title}</h1>
+    {lastUpdated && <div class="last-updated">Last Updated: {lastUpdated}</div>}
+  </header>
+
+  <slot />
+
+  <footer class="legal-footer">
+    <nav class="legal-nav">
+      <div class="legal-links">
+        <a href="/privacy-policy/">Privacy Policy</a>
+        <a href="/terms-of-service/">Terms of Service</a>
+        <a href="/dmca/">DMCA Notice</a>
+        <a href="/contact/">Contact Us</a>
+      </div>
+    </nav>
+  </footer>
+</article>
+
+<style>
+  .legal-content {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+    font-size: 1.1rem;
+    line-height: 1.6;
+  }
+
+  header {
+    margin-bottom: 3rem;
+  }
+
+  h1 {
+    font-size: 2.5rem;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+  }
+
+  .last-updated {
+    color: #666;
+    font-size: 1rem;
+  }
+
+  .legal-footer {
+    margin-top: 4rem;
+    padding-top: 2rem;
+    border-top: 1px solid #eee;
+  }
+
+  .legal-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .legal-links a {
+    color: #666;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    background: #f8f9fa;
+    transition: background 0.2s;
+  }
+
+  .legal-links a:hover {
+    background: #e9ecef;
+    color: #333;
+  }
+
+  @media (max-width: 768px) {
+    h1 {
+      font-size: 2rem;
+    }
+
+    .legal-links {
+      flex-direction: column;
+    }
+  }
+</style> 

@@ -1,0 +1,107 @@
+---
+import Layout from '../layouts/Layout.astro';
+import LegalPage from '../components/LegalPage.astro';
+
+const pageTitle = "Privacy Policy - SophieRainNudes.com";
+const pageDescription = "Privacy Policy for SophieRainNudes.com - Learn how we protect your privacy and handle your data.";
+const pageKeywords = "privacy policy, data protection, user privacy, Sophie Rain privacy";
+---
+
+<Layout
+  title={pageTitle}
+  description={pageDescription}
+  keywords={pageKeywords}
+  canonical="https://sophierainnudes.com/privacy-policy/"
+>
+  <main>
+    <LegalPage
+      title="Privacy Policy"
+      lastUpdated="February 2025"
+    >
+      <section>
+        <h2>1. Information Collection</h2>
+        <p>We collect minimal information necessary for site functionality:</p>
+        <ul>
+          <li>Browser type and version</li>
+          <li>Access timestamps</li>
+          <li>Referring websites</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>2. Use of Information</h2>
+        <p>Information collected is used solely for:</p>
+        <ul>
+          <li>Website optimization</li>
+          <li>Security monitoring</li>
+          <li>Analytics purposes</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>3. Data Protection</h2>
+        <p>We implement various security measures to maintain data safety:</p>
+        <ul>
+          <li>SSL encryption</li>
+          <li>Regular security audits</li>
+          <li>Limited data retention</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>4. Third-Party Services</h2>
+        <p>Our site may use third-party services for:</p>
+        <ul>
+          <li>Analytics tracking</li>
+          <li>Performance monitoring</li>
+          <li>Security features</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>5. User Rights</h2>
+        <p>You have the right to:</p>
+        <ul>
+          <li>Access your data</li>
+          <li>Request data deletion</li>
+          <li>Opt-out of tracking</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>6. Contact Information</h2>
+        <p>For privacy-related inquiries, contact us through our <a href="/contact/">contact page</a>.</p>
+      </section>
+    </LegalPage>
+  </main>
+</Layout>
+
+<style>
+  section {
+    margin: 2rem 0;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+
+  ul {
+    list-style: disc;
+    margin-left: 1.5rem;
+    margin-top: 0.5rem;
+  }
+
+  li {
+    margin: 0.5rem 0;
+  }
+
+  a {
+    color: #007bff;
+    text-decoration: none;
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }
+</style> 

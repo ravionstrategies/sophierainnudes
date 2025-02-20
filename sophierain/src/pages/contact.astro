@@ -1,0 +1,119 @@
+---
+import Layout from '../layouts/Layout.astro';
+import LegalPage from '../components/LegalPage.astro';
+
+const pageTitle = "Contact Us - SophieRainNudes.com";
+const pageDescription = "Contact SophieRainNudes.com - Get in touch with us for DMCA notices or support requests.";
+const pageKeywords = "contact, support, DMCA contact, Sophie Rain contact";
+---
+
+<Layout
+  title={pageTitle}
+  description={pageDescription}
+  keywords={pageKeywords}
+  canonical="https://sophierainnudes.com/contact/"
+>
+  <main>
+    <LegalPage
+      title="Contact Us"
+      lastUpdated="February 2025"
+    >
+      <section class="contact-info">
+        <h2>DMCA Takedown Requests</h2>
+        <div class="contact-box">
+          <p class="email-info">For DMCA takedown requests, please contact us at:</p>
+          <p class="email">dmca@sophierainnudes.com</p>
+          <div class="notice">
+            <p>All removal requests will be processed within 24-72 hours.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="legal-notice">
+        <div class="notice-box">
+          <h3>Important Notice:</h3>
+          <ul>
+            <li>All requests must include proper documentation</li>
+            <li>Please review our <a href="/dmca/">DMCA Policy</a> before submitting</li>
+            <li>For other inquiries, please see our <a href="/terms-of-service/">Terms of Service</a></li>
+          </ul>
+        </div>
+      </section>
+    </LegalPage>
+  </main>
+</Layout>
+
+<style>
+  .contact-box {
+    background: #f8f9fa;
+    padding: 2rem;
+    border-radius: 8px;
+    margin: 1.5rem 0;
+  }
+
+  .email-info {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+  }
+
+  .email {
+    font-size: 1.3rem;
+    color: #007bff;
+    font-weight: 500;
+    margin: 1rem 0;
+  }
+
+  .notice {
+    margin-top: 1.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid #dee2e6;
+    color: #666;
+  }
+
+  .notice-box {
+    background: #fff3cd;
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin: 1.5rem 0;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    color: #333;
+  }
+
+  h3 {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    color: #444;
+  }
+
+  ul {
+    list-style: disc;
+    margin-left: 1.5rem;
+  }
+
+  li {
+    margin: 0.8rem 0;
+  }
+
+  a {
+    color: #007bff;
+    text-decoration: none;
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }
+
+  @media (max-width: 768px) {
+    .contact-box, .notice-box {
+      padding: 1.5rem;
+    }
+
+    .email {
+      font-size: 1.2rem;
+    }
+  }
+</style> 

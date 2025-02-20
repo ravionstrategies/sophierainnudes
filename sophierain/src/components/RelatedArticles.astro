@@ -1,0 +1,92 @@
+---
+interface Props {
+  currentPage: string;
+}
+
+const { currentPage } = Astro.props;
+
+const articles = [
+  {
+    url: "/sophie-rain-leaked-nudes/",
+    title: "Sophie Rain Leaked Nudes – The Truth Behind the Viral Content"
+  },
+  {
+    url: "/sophie-rain-onlyfans-leaks/",
+    title: "Sophie Rain OnlyFans Leaks – Exclusive Content & Truth Behind Viral Claims"
+  },
+  {
+    url: "/who-is-sophie-rain/",
+    title: "Who is Sophie Rain? Biography, Age & Online Popularity"
+  },
+  {
+    url: "/sophie-rain-ai-generated-nudes/",
+    title: "Sophie Rain AI-Generated Nudes – How Fake Leaks Are Made"
+  },
+  {
+    url: "/sophie-rain-viral-search-trends/",
+    title: "Why Are People Searching for Sophie Rain Nudes? The Internet's Obsession Explained"
+  }
+];
+
+// Filter out current page from related articles
+const filteredArticles = articles.filter(article => article.url !== currentPage);
+---
+
+<section class="related-articles">
+  <h2>📚 Related Articles</h2>
+  <div class="article-grid">
+    {filteredArticles.map(article => (
+      <a href={article.url} class="article-card">
+        <h3>{article.title}</h3>
+        <span class="read-more">Read More →</span>
+      </a>
+    ))}
+  </div>
+</section>
+
+<style>
+  .related-articles {
+    margin-top: 4rem;
+    padding: 2rem;
+    background: #f8f9fa;
+    border-radius: 8px;
+  }
+
+  .article-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+  }
+
+  .article-card {
+    padding: 1.5rem;
+    background: white;
+    border-radius: 8px;
+    text-decoration: none;
+    color: inherit;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+
+  .article-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  }
+
+  .read-more {
+    display: inline-block;
+    margin-top: 1rem;
+    color: #6b46c1;
+    font-weight: 500;
+  }
+
+  @media (max-width: 768px) {
+    .article-card {
+      padding: 1rem;
+    }
+
+    .article-card h3 {
+      font-size: 1.1rem;
+    }
+  }
+</style> 

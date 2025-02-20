@@ -1,0 +1,41 @@
+---
+interface Props {
+  title: string;
+  publishDate: string;
+}
+
+const { title, publishDate } = Astro.props;
+---
+
+<article class="blog-post">
+  <h1>{title}</h1>
+  {publishDate && <div class="publish-date">📅 Updated: {publishDate}</div>}
+
+  <div class="content">
+    <slot />
+  </div>
+</article>
+
+<style>
+  .blog-post {
+    font-size: 1.1rem;
+    line-height: 1.6;
+  }
+
+  h1 {
+    font-size: 2.5rem;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+  }
+
+  .publish-date {
+    color: #666;
+    font-size: 1.1rem;
+  }
+
+  @media (max-width: 768px) {
+    h1 {
+      font-size: 2rem;
+    }
+  }
+</style> 

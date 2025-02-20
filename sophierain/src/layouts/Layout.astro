@@ -1,0 +1,185 @@
+---
+import HomeButton from '../components/HomeButton.astro';
+import Footer from '../components/Footer.astro';
+interface Props {
+	title: string;
+	description: string;
+	keywords: string;
+	canonical: string;
+	ogImage?: string;
+}
+
+const { title, description, keywords, canonical, ogImage = '/images/sophie-rain-social.svg' } = Astro.props;
+
+// Critical CSS for above-the-fold content
+const criticalCSS = `
+  :root {
+    --primary-color: #ff69b4;
+    --text-color: #333;
+    --background-color: #fff;
+    color-scheme: light;
+  }
+  body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    background: var(--background-color);
+    color: var(--text-color);
+  }
+  .container {
+    max-width: min(100vw - 2rem, 1200px);
+    margin: 0 auto;
+    padding: 0 1rem;
+  }
+  h1 {
+    font-size: clamp(1.5rem, 5vw, 2.5rem);
+    line-height: 1.2;
+    margin: 1rem 0;
+  }
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+  .lazy-image {
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+  }
+  .lazy-image.loaded {
+    opacity: 1;
+  }
+`;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		
+		<!-- Google Analytics -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=G-J0LHEBVP2S"></script>
+		<script>
+			window.dataLayer = window.dataLayer || [];
+			function gtag(){dataLayer.push(arguments);}
+			gtag('js', new Date());
+			gtag('config', 'G-J0LHEBVP2S');
+		</script>
+		
+		<!-- SEO Meta Tags -->
+		<title>{title}</title>
+		<meta name="title" content={title} />
+		<meta name="description" content={description} />
+		<meta name="keywords" content={keywords} />
+		<meta name="robots" content="index, follow" />
+		<meta name="language" content="English" />
+		<meta name="revisit-after" content="7 days" />
+		<meta name="author" content="Sophie Rain" />
+		<link rel="canonical" href={canonical} />
+
+		<!-- Open Graph / Facebook -->
+		<meta property="og:type" content="website" />
+		<meta property="og:url" content={canonical} />
+		<meta property="og:title" content={title} />
+		<meta property="og:description" content={description} />
+		<meta property="og:image" content={ogImage} />
+		<meta property="og:locale" content="en_US" />
+		<meta property="og:site_name" content="Sophie Rain Official" />
+
+		<!-- Twitter -->
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:url" content={canonical} />
+		<meta name="twitter:title" content={title} />
+		<meta name="twitter:description" content={description} />
+		<meta name="twitter:image" content={ogImage} />
+		<meta name="twitter:creator" content="@sophierain" />
+
+		<!-- Compression & Cache Headers -->
+		<meta http-equiv="Content-Encoding" content="br, gzip" />
+		<meta http-equiv="Cache-Control" content="max-age=31536000, immutable" />
+		<meta http-equiv="Accept-Encoding" content="gzip, deflate, br" />
+		
+		<!-- Preload critical assets -->
+		<link rel="preload" href={ogImage} as="image" fetchpriority="high" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link rel="modulepreload" href="/src/components/HomeButton.astro" />
+		
+		<!-- Favicon -->
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		
+		<!-- Schema.org markup -->
+		<script type="application/ld+json" set:html={JSON.stringify({
+			"@context": "https://schema.org",
+			"@type": "Article",
+			"headline": title,
+			"description": description,
+			"image": ogImage,
+			"datePublished": "2025-02-19",
+			"dateModified": "2025-02-19",
+			"author": {
+				"@type": "Person",
+				"name": "Sophie Rain",
+				"url": "https://sophierainnudes.com/who-is-sophie-rain/"
+			},
+			"publisher": {
+				"@type": "Organization",
+				"name": "Sophie Rain Official",
+				"logo": {
+					"@type": "ImageObject",
+					"url": "/images/logo.svg"
+				},
+				"url": "https://sophierainnudes.com"
+			},
+			"mainEntityOfPage": {
+				"@type": "WebPage",
+				"@id": canonical
+			},
+			"keywords": keywords.split(",").map(k => k.trim())
+		})} />
+
+		<!-- Cache Control -->
+		<meta http-equiv="Cache-Control" content="max-age=31536000" />
+		
+		<!-- Critical CSS -->
+		<style set:html={criticalCSS}></style>
+		
+		<!-- Non-critical CSS -->
+		<link rel="stylesheet" href="/styles/main.css" media="print" onload="this.media='all'" />
+		<noscript><link rel="stylesheet" href="/styles/main.css" /></noscript>
+
+		<!-- Lazy Loading Script -->
+		<script>
+			document.addEventListener('DOMContentLoaded', function() {
+				const lazyImages = document.querySelectorAll('img[loading="lazy"]');
+				const imageObserver = new IntersectionObserver((entries, observer) => {
+					entries.forEach(entry => {
+						if (entry.isIntersecting) {
+							const img = entry.target;
+							img.src = img.dataset.src;
+							img.classList.add('loaded');
+							observer.unobserve(img);
+						}
+					});
+				});
+
+				lazyImages.forEach(img => {
+					imageObserver.observe(img);
+				});
+			});
+		</script>
+	</head>
+	<body>
+		<HomeButton />
+		<main class="container">
+			<slot />
+		</main>
+		<Footer />
+		
+		<!-- Module/Component-specific JavaScript -->
+		<script type="module" src="/src/scripts/main.js" defer></script>
+		
+		<!-- Analytics (load last, async) -->
+		{import.meta.env.PROD && (
+			<script async src="/src/scripts/analytics.js" data-website-id="your-id"></script>
+		)}
+	</body>
+</html>

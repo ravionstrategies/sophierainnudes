@@ -1,0 +1,42 @@
+/*
+  X-Frame-Options: DENY
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=()
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' data: https: https://www.google-analytics.com; font-src 'self' https://fonts.gstatic.com; connect-src 'self' https://www.google-analytics.com https://analytics.google.com https://stats.g.doubleclick.net; frame-ancestors 'none'; form-action 'self'; upgrade-insecure-requests;
+  Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
+  Cache-Control: public, max-age=3600, must-revalidate
+  X-XSS-Protection: 1; mode=block
+  Feature-Policy: accelerometer 'none'; camera 'none'; geolocation 'none'; gyroscope 'none'; magnetometer 'none'; microphone 'none'; payment 'none'; usb 'none'
+  Content-Encoding: br, gzip
+  Vary: Accept-Encoding
+
+/*.html
+  Content-Type: text/html; charset=UTF-8
+  Content-Encoding: br, gzip
+  Vary: Accept-Encoding
+
+/*.css
+  Content-Type: text/css; charset=UTF-8
+  Content-Encoding: br, gzip
+  Vary: Accept-Encoding
+
+/*.js
+  Content-Type: text/javascript; charset=UTF-8
+  Content-Encoding: br, gzip
+  Vary: Accept-Encoding
+
+/*.json
+  Content-Type: application/json; charset=UTF-8
+  Content-Encoding: br, gzip
+  Vary: Accept-Encoding
+
+/*.svg
+  Content-Type: image/svg+xml
+  Content-Encoding: br, gzip
+  Vary: Accept-Encoding
+
+/*.txt
+  Content-Type: text/plain; charset=UTF-8
+  Content-Encoding: br, gzip
+  Vary: Accept-Encoding 

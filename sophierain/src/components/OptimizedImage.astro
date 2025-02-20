@@ -1,0 +1,131 @@
+---
+interface Props {
+  src: string;
+  alt: string;
+  width?: number;
+  height?: number;
+  class?: string;
+  loading?: "lazy" | "eager";
+  sizes?: string;
+}
+
+const {
+  src,
+  alt,
+  width,
+  height,
+  class: className,
+  loading = "lazy",
+  sizes = "(max-width: 768px) 100vw, 768px"
+} = Astro.props;
+
+// Generate WebP source if the original is not already WebP
+const isWebP = src.toLowerCase().endsWith('.webp');
+const webpSrc = isWebP ? src : src.replace(/\.(jpg|jpeg|png)$/i, '.webp');
+
+// Generate responsive widths
+const breakpoints = [320, 640, 768, 1024, 1280];
+const srcsetWebP = breakpoints
+  .map(w => `${webpSrc.replace(/\.(jpg|jpeg|png|webp)$/i, `-${w}.webp`)} ${w}w`)
+  .join(', ');
+
+const srcsetOriginal = !isWebP ? breakpoints
+  .map(w => `${src.replace(/\.(jpg|jpeg|png)$/i, `-${w}${src.match(/\.[^.]+$/)[0]}`)} ${w}w`)
+  .join(', ') : '';
+
+// Generate tiny placeholder for blur-up effect
+const placeholderSize = 20; // tiny placeholder width
+const placeholderSrc = webpSrc.replace(/\.(jpg|jpeg|png|webp)$/i, `-${placeholderSize}.webp`);
+---
+
+<div class="image-wrapper">
+  {loading === "lazy" && (
+    <img
+      src={placeholderSrc}
+      alt=""
+      width={width}
+      height={height}
+      class="placeholder-image"
+      aria-hidden="true"
+    />
+  )}
+  <picture class={`image-container ${loading === "lazy" ? "lazy-image" : ""}`}>
+    <source
+      type="image/webp"
+      srcset={loading === "eager" ? srcsetWebP : undefined}
+      data-srcset={loading === "lazy" ? srcsetWebP : undefined}
+      sizes={sizes}
+    />
+    {!isWebP && (
+      <source
+        type={`image/${src.split('.').pop()}`}
+        srcset={loading === "eager" ? srcsetOriginal : undefined}
+        data-srcset={loading === "lazy" ? srcsetOriginal : undefined}
+        sizes={sizes}
+      />
+    )}
+    <img
+      src={loading === "eager" ? src : undefined}
+      data-src={loading === "lazy" ? src : undefined}
+      alt={alt}
+      width={width}
+      height={height}
+      class={className}
+      loading={loading}
+      decoding="async"
+      fetchpriority={loading === "eager" ? "high" : "auto"}
+    />
+  </picture>
+</div>
+
+<style>
+  .image-wrapper {
+    position: relative;
+    overflow: hidden;
+    background-color: #f0f0f0;
+  }
+
+  .image-container {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+
+  .placeholder-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    filter: blur(10px);
+    transform: scale(1.1);
+    transition: opacity 0.3s ease-in-out;
+    object-fit: cover;
+  }
+
+  .lazy-image {
+    opacity: 0;
+  }
+
+  .lazy-image.loaded {
+    opacity: 1;
+  }
+
+  .lazy-image.loaded + .placeholder-image {
+    opacity: 0;
+  }
+
+  img {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .placeholder-image,
+    .lazy-image {
+      transition: none !important;
+    }
+  }
+</style> 

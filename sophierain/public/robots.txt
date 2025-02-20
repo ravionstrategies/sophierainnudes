@@ -1,0 +1,22 @@
+# robots.txt for sophierainnudes.com
+User-agent: *
+Allow: /
+
+# Main pages
+Allow: /sophie-rain-leaked-nudes/
+Allow: /sophie-rain-onlyfans-leaks/
+Allow: /who-is-sophie-rain/
+Allow: /sophie-rain-ai-generated-nudes/
+Allow: /sophie-rain-viral-search-trends/
+
+# Legal pages
+Allow: /privacy-policy/
+Allow: /terms-of-service/
+Allow: /dmca/
+Allow: /contact/
+
+# Sitemap
+Sitemap: https://sophierainnudes.com/sitemap.xml
+
+# Crawl-delay
+Crawl-delay: 1 
