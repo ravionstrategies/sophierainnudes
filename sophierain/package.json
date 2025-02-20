@@ -4,9 +4,9 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "npm run optimize-images && astro dev",
+    "dev": "astro dev",
     "start": "astro dev",
-    "build": "npm run optimize-images && astro build",
+    "build": "astro build",
     "preview": "astro preview",
     "optimize-images": "node scripts/optimize-images.js",
     "clean": "rm -rf dist public/images/*.{jpg,jpeg,png,webp}",
@@ -14,9 +14,10 @@
   },
   "dependencies": {
     "@astrojs/sitemap": "^3.0.3",
-    "astro": "^4.16.18",
+    "astro": "^4.0.0",
     "astro-compress": "^2.2.5",
-    "compression": "^1.7.4"
+    "compression": "^1.7.4",
+    "@astrojs/vercel": "^7.0.0"
   },
   "devDependencies": {
     "glob": "^10.3.10",
