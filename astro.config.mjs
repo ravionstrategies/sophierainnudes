@@ -2,24 +2,19 @@
 import { defineConfig } from 'astro/config';
 import compress from 'astro-compress';
 import sitemap from '@astrojs/sitemap';
-import vercel from '@astrojs/vercel/serverless';
+import vercel from '@astrojs/vercel/static';
 
 // https://astro.build/config
 export default defineConfig({
   site: 'https://sophierainnudes.com',
-  output: 'server',
-  adapter: vercel({
-    webAnalytics: {
-      enabled: true
-    }
-  }),
+  output: 'static',
+  adapter: vercel(),
   compressHTML: true,
   build: {
     inlineStylesheets: 'auto'
   },
   integrations: [
     compress({
-      Path: "./dist",
       CSS: true,
       HTML: {
         'html-minifier-terser': {
@@ -38,30 +33,7 @@ export default defineConfig({
         terser: {
           compress: {
             drop_console: true,
-            drop_debugger: true,
-            pure_funcs: ['console.log'],
-            passes: 3,
-            unsafe_math: true,
-            unsafe_methods: true,
-            toplevel: true,
-            sequences: true,
-            dead_code: true,
-            evaluate: true,
-            if_return: true,
-            join_vars: true,
-            reduce_vars: true
-          },
-          mangle: {
-            toplevel: true,
-            properties: false,
-            keep_classnames: false,
-            keep_fnames: false
-          },
-          format: {
-            comments: false,
-            ecma: 2020,
-            wrap_iife: true,
-            wrap_func_args: true
+            drop_debugger: true
           }
         }
       },
