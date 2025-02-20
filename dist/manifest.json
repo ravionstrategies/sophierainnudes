@@ -1,0 +1,17 @@
+{
+  "name": "Sophie Rain Nudes",
+  "short_name": "Sophie Rain",
+  "description": "Exclusive Sophie Rain content and updates for 2025",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#ff69b4",
+  "icons": [
+    {
+      "src": "/images/logo.svg",
+      "sizes": "512x512",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+} 
