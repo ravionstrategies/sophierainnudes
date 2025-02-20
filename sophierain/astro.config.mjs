@@ -2,10 +2,17 @@
 import { defineConfig } from 'astro/config';
 import compress from 'astro-compress';
 import sitemap from '@astrojs/sitemap';
+import vercel from '@astrojs/vercel/serverless';
 
 // https://astro.build/config
 export default defineConfig({
   site: 'https://sophierainnudes.com',
+  output: 'server',
+  adapter: vercel({
+    webAnalytics: {
+      enabled: true
+    }
+  }),
   compressHTML: true,
   build: {
     inlineStylesheets: 'auto'
