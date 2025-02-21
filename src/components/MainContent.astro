@@ -8,6 +8,12 @@
     <div class="update-date">📅 Updated: February 2025</div>
   </header>
 
+  <div class="breaking-news">
+    <span class="badge">🔥 BREAKING NEWS</span>
+    <p>Join our <strong>Telegram Channel</strong> for exclusive daily updates!</p>
+    <a href="https://t.me/sophierain" class="telegram-link" target="_blank" rel="nofollow">Click here to join →</a>
+  </div>
+
   <div class="alert">
     <h3>🚨 Before You Scroll – Hidden Surprise Inside!</h3>
     <p>There's a <strong>hidden video</strong> on this page you've <strong>never seen before.</strong></p>
@@ -440,5 +446,60 @@
   h4 {
     font-size: 1.2rem;
     margin: 1.2rem 0 0.8rem;
+  }
+
+  .breaking-news {
+    background: linear-gradient(135deg, #1a237e 0%, #0d47a1 100%);
+    color: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin: 2rem 0;
+    position: relative;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  .breaking-news .badge {
+    display: inline-block;
+    background: #ff3d00;
+    color: white;
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    font-weight: bold;
+    font-size: 0.9rem;
+    margin-bottom: 0.75rem;
+    animation: pulse 2s infinite;
+  }
+
+  .breaking-news p {
+    margin: 0.5rem 0;
+    font-size: 1.1rem;
+  }
+
+  .breaking-news .telegram-link {
+    display: inline-block;
+    background: rgba(255, 255, 255, 0.15);
+    color: white;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    margin-top: 0.75rem;
+    transition: background 0.2s;
+  }
+
+  .breaking-news .telegram-link:hover {
+    background: rgba(255, 255, 255, 0.25);
+  }
+
+  @keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+  }
+
+  @media (max-width: 768px) {
+    .breaking-news {
+      margin: 1.5rem -0.75rem;
+      border-radius: 0;
+    }
   }
 </style> 
