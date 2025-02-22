@@ -230,28 +230,8 @@ const criticalCSS = `
 		<link rel="stylesheet" href="/styles/main.css" media="print" onload="this.media='all'" />
 		<noscript><link rel="stylesheet" href="/styles/main.css" /></noscript>
 
-		<!-- Lazy Loading Script -->
-		<script>
-			document.addEventListener('DOMContentLoaded', function() {
-				const lazyImages = document.querySelectorAll('img[loading="lazy"]');
-				const imageObserver = new IntersectionObserver((entries, observer) => {
-					entries.forEach(entry => {
-						if (entry.isIntersecting) {
-							const img = entry.target as HTMLImageElement;
-							if (img.dataset.src) {
-								img.src = img.dataset.src;
-							}
-							img.classList.add('loaded');
-							observer.unobserve(img);
-						}
-					});
-				});
-
-				lazyImages.forEach(img => {
-					imageObserver.observe(img);
-				});
-			});
-		</script>
+		<!-- Optimized script loading -->
+		<script type="module" src="/scripts/main.js" async></script>
 	</head>
 	<body>
 		<!-- JuicyAds Configuration -->
