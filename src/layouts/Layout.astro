@@ -56,11 +56,16 @@ const criticalCSS = `
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		
 		<!-- Google Analytics -->
-		<script async src="https://www.googletagmanager.com/gtag/js?id=G-J0LHEBVP2S"></script>
-		<script>
+		<script type="text/partytown" async src="https://www.googletagmanager.com/gtag/js?id=G-J0LHEBVP2S"></script>
+		<script type="text/partytown">
 			window.dataLayer = window.dataLayer || [];
-			function gtag(){dataLayer.push(arguments);}
+			function gtag() {
+				// @ts-ignore
+				dataLayer.push(arguments);
+			}
+			// @ts-ignore
 			gtag('js', new Date());
+			// @ts-ignore
 			gtag('config', 'G-J0LHEBVP2S');
 		</script>
 		
@@ -153,8 +158,10 @@ const criticalCSS = `
 				const imageObserver = new IntersectionObserver((entries, observer) => {
 					entries.forEach(entry => {
 						if (entry.isIntersecting) {
-							const img = entry.target;
-							img.src = img.dataset.src;
+							const img = entry.target as HTMLImageElement;
+							if (img.dataset.src) {
+								img.src = img.dataset.src;
+							}
 							img.classList.add('loaded');
 							observer.unobserve(img);
 						}
