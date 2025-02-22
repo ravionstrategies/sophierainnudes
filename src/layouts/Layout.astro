@@ -52,10 +52,22 @@ const criticalCSS = `
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-		<meta charset="UTF-8" />
-		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+		<meta name="format-detection" content="telephone=no">
+		<meta name="theme-color" content="#ff0000">
 		
+		<!-- SEO Meta Tags -->
+		<title>{title}</title>
+		<meta name="description" content="Exclusive Sophie Rain content and latest updates. Get access to private photos, leaked content, and daily updates. Join our VIP Telegram channel now! 🔥">
+		<meta name="title" content={title} />
+		<meta name="keywords" content={keywords} />
+		<meta name="robots" content="index, follow, max-image-preview:large" />
+		<meta name="language" content="English" />
+		<meta name="revisit-after" content="1 day" />
+		<meta name="author" content="Sophie Rain" />
+		<link rel="canonical" href={canonical} />
+
 		<!-- Google Analytics -->
 		<script type="text/partytown" async src="https://www.googletagmanager.com/gtag/js?id=G-J0LHEBVP2S"></script>
 		<script type="text/partytown">
@@ -69,23 +81,12 @@ const criticalCSS = `
 			// @ts-ignore
 			gtag('config', 'G-J0LHEBVP2S');
 		</script>
-		
-		<!-- SEO Meta Tags -->
-		<title>{title}</title>
-		<meta name="title" content={title} />
-		<meta name="description" content={description} />
-		<meta name="keywords" content={keywords} />
-		<meta name="robots" content="index, follow" />
-		<meta name="language" content="English" />
-		<meta name="revisit-after" content="7 days" />
-		<meta name="author" content="Sophie Rain" />
-		<link rel="canonical" href={canonical} />
 
 		<!-- Open Graph / Facebook -->
 		<meta property="og:type" content="website" />
 		<meta property="og:url" content={canonical} />
 		<meta property="og:title" content={title} />
-		<meta property="og:description" content={description} />
+		<meta property="og:description" content="Exclusive Sophie Rain content and latest updates. Get access to private photos, leaked content, and daily updates. Join our VIP Telegram channel now! 🔥" />
 		<meta property="og:image" content={ogImage} />
 		<meta property="og:locale" content="en_US" />
 		<meta property="og:site_name" content="Sophie Rain Official" />
@@ -94,20 +95,17 @@ const criticalCSS = `
 		<meta name="twitter:card" content="summary_large_image" />
 		<meta name="twitter:url" content={canonical} />
 		<meta name="twitter:title" content={title} />
-		<meta name="twitter:description" content={description} />
+		<meta name="twitter:description" content="Exclusive Sophie Rain content and latest updates. Get access to private photos, leaked content, and daily updates. Join our VIP Telegram channel now! 🔥" />
 		<meta name="twitter:image" content={ogImage} />
 		<meta name="twitter:creator" content="@sophierain" />
 
 		<!-- Compression & Cache Headers -->
-		<meta http-equiv="Content-Encoding" content="br, gzip" />
-		<meta http-equiv="Accept-Encoding" content="gzip, deflate, br" />
 		<meta http-equiv="Cache-Control" content="max-age=31536000, immutable" />
 		
 		<!-- Preload critical assets -->
 		<link rel="preload" href={ogImage} as="image" fetchpriority="high" />
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-		<link rel="modulepreload" href="/src/components/HomeButton.astro" />
 		
 		<!-- Favicon -->
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
@@ -117,7 +115,7 @@ const criticalCSS = `
 			"@context": "https://schema.org",
 			"@type": "Article",
 			"headline": title,
-			"description": description,
+			"description": "Exclusive Sophie Rain content and latest updates. Get access to private photos, leaked content, and daily updates. Join our VIP Telegram channel now! 🔥",
 			"image": ogImage,
 			"datePublished": "2025-02-19",
 			"dateModified": "2025-02-19",
@@ -180,7 +178,7 @@ const criticalCSS = `
 		<Footer />
 		
 		<!-- Module/Component-specific JavaScript -->
-		<script type="module" src="/src/scripts/main.js" defer></script>
+		<script type="module" src="/scripts/main.js" defer></script>
 	</body>
 </html>
 
