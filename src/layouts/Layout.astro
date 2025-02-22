@@ -57,11 +57,9 @@ const criticalCSS = `
 		<meta name="format-detection" content="telephone=no">
 		<meta name="theme-color" content="#ff0000">
 		
-		<!-- Preload critical assets -->
-		<link rel="preload" href={ogImage} as="image" fetchpriority="high" />
-		<link rel="preconnect" href="https://fonts.googleapis.com" />
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-		
+		<!-- Clickadilla Ad Manager -->
+		<script async src="https://js.wpadmngr.com/static/adManager.js" data-admpid="296809"></script>
+
 		<!-- SEO Meta Tags -->
 		<title>{title}</title>
 		<meta name="description" content="Exclusive Sophie Rain content and latest updates. Get access to private photos, leaked content, and daily updates. Join our VIP Telegram channel now! 🔥">
@@ -73,24 +71,25 @@ const criticalCSS = `
 		<meta name="author" content="Sophie Rain" />
 		<link rel="canonical" href={canonical} />
 
-		<!-- Clickadilla Ad Manager -->
-		<script async src="https://js.wpadmngr.com/static/adManager.js" data-admpid="296809"></script>
-
-		<!-- Google Analytics - Optimized -->
+		<!-- Preload critical assets -->
+		<link rel="preload" href={ogImage} as="image" fetchpriority="high" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		
+		<!-- Google Analytics -->
 		<script async src="https://www.googletagmanager.com/gtag/js?id=G-J0LHEBVP2S"></script>
-		<script>
+		<script is:inline>
+			// @ts-ignore
 			window.dataLayer = window.dataLayer || [];
-			function gtag(){dataLayer.push(arguments);}
+			function gtag() {
+				window.dataLayer.push(arguments);
+			}
 			gtag('js', new Date());
 			gtag('config', 'G-J0LHEBVP2S', {
-				'send_page_view': false,
-				'transport_type': 'beacon'
-			});
-			// Defer page view until after LCP
-			document.addEventListener('DOMContentLoaded', function() {
-				setTimeout(() => {
-					gtag('event', 'page_view');
-				}, 100);
+				page_path: window.location.pathname,
+				debug_mode: false,
+				transport_type: 'beacon',
+				send_page_view: true
 			});
 		</script>
 
@@ -162,9 +161,16 @@ const criticalCSS = `
 				color: var(--text-color);
 			}
 			.container {
-				max-width: min(100vw - 2rem, 1200px);
+				width: 100%;
+				max-width: 1200px;
 				margin: 0 auto;
 				padding: 0 1rem;
+				box-sizing: border-box;
+			}
+			@media (max-width: 768px) {
+				.container {
+					padding: 0 0.5rem;
+				}
 			}
 			h1 {
 				font-size: clamp(1.8rem, 4vw, 2.5rem);

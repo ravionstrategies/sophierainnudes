@@ -236,9 +236,10 @@
     color: white;
     padding: 1.25rem;
     border-radius: 12px;
-    margin: 1.5rem auto;
+    margin: 1.5rem 0;
     border: 2px solid #FF0000;
-    max-width: 800px;
+    box-shadow: 0 2px 8px rgba(255, 0, 0, 0.2);
+    width: 100%;
   }
 
   .badge {
@@ -259,12 +260,13 @@
     text-decoration: none;
     padding: 1rem;
     border-radius: 8px;
-    margin: 0.75rem auto;
+    margin: 0.75rem 0;
     text-align: center;
     font-weight: 900;
     font-size: 1.2rem;
     text-transform: uppercase;
-    max-width: 600px;
+    border: 1px solid rgba(255,255,255,0.2);
+    width: 100%;
   }
 
   .must-join {
@@ -296,11 +298,18 @@
     text-transform: uppercase;
   }
 
-  /* Non-critical styles moved to external CSS */
+  /* Mobile optimizations */
   @media (max-width: 768px) {
     .breaking-news {
-      margin: 1rem 0.5rem;
-      padding: 1rem;
+        margin: 1rem 0;
+        padding: 1rem;
+        width: calc(100% - 2rem);
+    }
+
+    .telegram-link {
+        width: 100%;
+        font-size: 1.1rem;
+        padding: 0.875rem;
     }
   }
 </style> 
