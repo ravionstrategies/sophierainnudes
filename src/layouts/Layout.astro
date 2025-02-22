@@ -69,17 +69,29 @@ const criticalCSS = `
 		<link rel="canonical" href={canonical} />
 
 		<!-- Google Analytics -->
-		<script type="text/partytown" async src="https://www.googletagmanager.com/gtag/js?id=G-J0LHEBVP2S"></script>
-		<script type="text/partytown">
-			window.dataLayer = window.dataLayer || [];
-			function gtag() {
-				// @ts-ignore
-				dataLayer.push(arguments);
+		<script async src="https://www.googletagmanager.com/gtag/js?id=G-J0LHEBVP2S"></script>
+		<script>
+			// Define dataLayer
+			interface Window {
+				dataLayer: any[];
 			}
-			// @ts-ignore
+			
+			// Initialize dataLayer
+			window.dataLayer = window.dataLayer || [];
+			
+			// Define gtag function
+			function gtag(...args: any[]) {
+				window.dataLayer.push(arguments);
+			}
+			
+			// Initialize GA4
 			gtag('js', new Date());
-			// @ts-ignore
-			gtag('config', 'G-J0LHEBVP2S');
+			gtag('config', 'G-J0LHEBVP2S', {
+				page_path: window.location.pathname,
+				debug_mode: false,
+				transport_type: 'beacon',
+				send_page_view: true
+			});
 		</script>
 
 		<!-- Open Graph / Facebook -->
