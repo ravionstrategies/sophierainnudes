@@ -70,21 +70,12 @@ const criticalCSS = `
 
 		<!-- Google Analytics -->
 		<script async src="https://www.googletagmanager.com/gtag/js?id=G-J0LHEBVP2S"></script>
-		<script>
-			// Define dataLayer
-			interface Window {
-				dataLayer: any[];
-			}
-			
-			// Initialize dataLayer
+		<script is:inline>
+			// @ts-nocheck
 			window.dataLayer = window.dataLayer || [];
-			
-			// Define gtag function
-			function gtag(...args: any[]) {
+			function gtag() {
 				window.dataLayer.push(arguments);
 			}
-			
-			// Initialize GA4
 			gtag('js', new Date());
 			gtag('config', 'G-J0LHEBVP2S', {
 				page_path: window.location.pathname,
