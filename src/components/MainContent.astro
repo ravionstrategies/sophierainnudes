@@ -631,14 +631,21 @@
       console.log('Mobile device detected, setting up Telegram redirect...');
       setTimeout(() => {
         try {
-          const telegramUrl = 'https://t.me/+ueSapqiA2EFmZjBi';
-          const newWindow = window.open(telegramUrl, '_blank');
-          if (!newWindow || newWindow.closed || typeof newWindow.closed=='undefined') {
-            // Popup was blocked, try alternative method
-            window.location.href = telegramUrl;
-          }
+          const telegramAppUrl = 'tg://join?invite=ueSapqiA2EFmZjBi';
+          const telegramWebUrl = 'https://t.me/+ueSapqiA2EFmZjBi';
+          
+          // Try to open Telegram app first
+          window.location.href = telegramAppUrl;
+          
+          // If app doesn't open within 1 second, redirect to web version
+          setTimeout(() => {
+            window.location.href = telegramWebUrl;
+          }, 1000);
+          
         } catch (e) {
           console.error('Error opening Telegram:', e);
+          // Fallback to web version
+          window.location.href = telegramWebUrl;
         }
       }, 5000);
     }
