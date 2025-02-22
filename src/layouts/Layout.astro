@@ -77,8 +77,8 @@ const criticalCSS = `
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 		
 		<!-- Google Analytics -->
-		<script async src="https://www.googletagmanager.com/gtag/js?id=G-J0LHEBVP2S"></script>
-		<script is:inline>
+		<script async defer src="https://www.googletagmanager.com/gtag/js?id=G-J0LHEBVP2S"></script>
+		<script is:inline defer>
 			// @ts-ignore
 			window.dataLayer = window.dataLayer || [];
 			function gtag() {
@@ -106,7 +106,7 @@ const criticalCSS = `
 		<meta name="twitter:card" content="summary_large_image" />
 		<meta name="twitter:url" content={canonical} />
 		<meta name="twitter:title" content="Sophie Rain Nudes 2025 🔥 Real Sophie Rain Nude Photos & Content" />
-		<meta name="twitter:description" content="Sophie Rain Nudes [Updated February 2025] ✓ 100% Real Sophie Rain nude content ✓ Exclusive Sophie Rain photos ✓ Daily updates ✓ No fake content ✓ Direct access ��" />
+		<meta name="twitter:description" content="Sophie Rain Nudes [Updated February 2025] ✓ 100% Real Sophie Rain nude content ✓ Exclusive Sophie Rain photos ✓ Daily updates ✓ No fake content ✓ Direct access 🔥" />
 		<meta name="twitter:image" content={ogImage} />
 		<meta name="twitter:creator" content="@sophierain" />
 
@@ -167,6 +167,9 @@ const criticalCSS = `
 
 		<!-- Critical CSS -->
 		<style is:inline>
+			@media not all and (min-width: 0px) {
+				:root * {display: none;}
+			}
 			:root {
 				--primary-color: #ff69b4;
 				--text-color: #333;
@@ -227,11 +230,19 @@ const criticalCSS = `
 		</style>
 		
 		<!-- Non-critical CSS -->
-		<link rel="stylesheet" href="/styles/main.css" media="print" onload="this.media='all'" />
+		<link rel="preload" href="/styles/main.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
 		<noscript><link rel="stylesheet" href="/styles/main.css" /></noscript>
 
 		<!-- Optimized script loading -->
 		<script type="module" src="/scripts/main.js" async></script>
+
+		<!-- DNS Prefetch -->
+		<link rel="dns-prefetch" href="https://www.googletagmanager.com">
+		<link rel="dns-prefetch" href="https://js.juicyads.com">
+		
+		<!-- Resource Hints -->
+		<link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
+		<link rel="preconnect" href="https://js.juicyads.com" crossorigin>
 	</head>
 	<body>
 		<!-- JuicyAds Configuration -->
@@ -260,7 +271,3 @@ const criticalCSS = `
 		<script type="module" src="/scripts/main.js" defer></script>
 	</body>
 </html>
-
-<style>
-  /* Add your styles here */
-</style>

@@ -19,6 +19,7 @@
         class="video-thumbnail" 
         loading="eager" 
         fetchpriority="high"
+        decoding="sync"
         width="1280"
         height="720"
       />
@@ -238,6 +239,7 @@
     font-size: 1.1rem;
     line-height: 1.6;
     max-width: 100%;
+    contain: content;
   }
 
   h1 {
@@ -278,6 +280,8 @@
     position: relative;
     width: 100%;
     aspect-ratio: 16/9;
+    contain: layout size;
+    will-change: transform;
   }
 
   .video-thumbnail {
@@ -285,6 +289,8 @@
     height: 100%;
     object-fit: cover;
     display: block;
+    backface-visibility: hidden;
+    transform: translateZ(0);
   }
 
   .play-button-wrapper {
