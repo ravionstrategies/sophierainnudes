@@ -8,7 +8,7 @@
     <div class="update-date">📅 Updated: February 2025</div>
   </header>
 
-  <div class="breaking-news primary">
+  <div class="breaking-news">
     <span class="badge">🔥 BREAKING NEWS</span>
     <div class="telegram-cta">
       <a href="https://t.me/+ueSapqiA2EFmZjBi" class="telegram-link" target="_blank" rel="nofollow">🚨 LIVE EXCLUSIVE CONTENT – JOIN NOW 🚨</a>
@@ -20,12 +20,6 @@
       </div>
       <p class="limited-spots">LIMITED INVITE: Only 100 spots left – Click NOW!</p>
     </div>
-  </div>
-
-  <div class="breaking-news secondary">
-    <a href="https://t.me/+ueSapqiA2EFmZjBi" class="telegram-link" target="_blank" rel="nofollow">🔥 18+ VIP LEAKED CONTENT – ENTER NOW</a>
-    <p class="must-join">You must JOIN before you see the content. No exceptions.</p>
-    <p class="limited-spots">LIMITED INVITE: Only 100 spots left – Click NOW!</p>
   </div>
 
   <div class="alert">
@@ -224,116 +218,160 @@
 </script>
 
 <style>
+  /* Critical styles first */
+  .main-content {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
+  h1 {
+    font-size: clamp(1.8rem, 4vw, 2.5rem);
+    line-height: 1.2;
+    margin-bottom: 1rem;
+  }
+
+  /* Breaking news optimized */
+  .breaking-news {
+    background: #1a0000;
+    color: white;
+    padding: 1.25rem;
+    border-radius: 12px;
+    margin: 1.5rem 0;
+    border: 2px solid #FF0000;
+    box-shadow: 0 2px 8px rgba(255, 0, 0, 0.2);
+  }
+
+  .breaking-news .badge {
+    display: inline-block;
+    background: #FF0000;
+    color: white;
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    font-weight: bold;
+    font-size: 0.9rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .breaking-news .telegram-link {
+    display: block;
+    background: #FF0000;
+    color: white;
+    text-decoration: none;
+    padding: 1rem;
+    border-radius: 8px;
+    margin: 0.75rem 0;
+    text-align: center;
+    font-weight: 900;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    border: 1px solid rgba(255,255,255,0.2);
+    will-change: transform;
+  }
+
+  .breaking-news .telegram-link:active {
+    transform: scale(0.98);
+  }
+
+  .breaking-news .must-join {
+    color: #FFD700;
+    font-weight: bold;
+    margin: 0.75rem 0;
+    font-size: 1rem;
+    text-transform: uppercase;
+  }
+
+  .breaking-news .stats-box {
+    background: rgba(255,255,255,0.05);
+    padding: 0.75rem;
+    border-radius: 6px;
+    margin: 0.75rem 0;
+  }
+
+  .breaking-news .stats-box p {
+    margin: 0.4rem 0;
+    color: #fff;
+    font-size: 1rem;
+  }
+
+  .breaking-news .limited-spots {
+    color: #FF0000;
+    font-weight: 900;
+    font-size: 1.1rem;
+    margin-top: 0.75rem;
+    text-transform: uppercase;
+  }
+
+  /* Alert box */
+  .alert {
+    background: #fff3cd;
+    border: 1px solid #ffeeba;
+    padding: 1.25rem;
+    border-radius: 8px;
+    margin: 1.5rem 0;
+  }
+
+  /* Table of contents */
+  .toc {
+    background: #f8f9fa;
+    padding: 1.25rem;
+    border-radius: 8px;
+    margin: 1.5rem 0;
+  }
+
+  .toc ol {
+    padding-left: 1.25rem;
+  }
+
+  .toc a {
+    color: #333;
+    text-decoration: none;
+    line-height: 1.6;
+    display: block;
+    padding: 0.25rem 0;
+  }
+
+  /* Content sections */
+  section {
+    margin: 2rem 0;
+    padding-top: 0.5rem;
+  }
+
+  /* Reduced motion */
+  @media (prefers-reduced-motion: reduce) {
+    .breaking-news .telegram-link {
+      transition: none;
+    }
+  }
+
+  /* Mobile optimizations */
+  @media (max-width: 768px) {
+    .breaking-news {
+      margin: 1rem 0.5rem;
+      padding: 1rem;
+    }
+
+    .toc {
+      margin: 1rem 0;
+      padding: 1rem;
+    }
+
+    .alert {
+      margin: 1rem 0;
+      padding: 1rem;
+    }
+  }
+
   /* Base styles */
   .main-content {
     max-width: 100%;
     overflow-x: hidden;
   }
 
-  /* Mobile-optimized TOC */
-  .toc {
-    background: #f8f9fa;
-    padding: 1.5rem;
-    border-radius: 8px;
-    margin: 2rem 0;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-  }
-
-  @media (max-width: 768px) {
-    .toc {
-      padding: 1rem;
-      margin: 1.5rem -0.75rem;
-      border-radius: 0;
-      overflow-x: auto;
-      -webkit-overflow-scrolling: touch;
-    }
-
-    .toc ol {
-      padding-left: 1.25rem;
-      white-space: nowrap;
-    }
-
-    .toc li {
-      margin: 0.5rem 0;
-    }
-
-    .toc a {
-      display: inline-block;
-      padding: 0.5rem 0;
-    }
-  }
-
-  /* Mobile-optimized content sections */
-  @media (max-width: 768px) {
-    section {
-      margin: 2rem 0;
-      padding-top: 0.5rem;
-    }
-
-    .fact-list li, .tool-list li {
-      padding-left: 1.5rem;
-      margin: 0.75rem 0;
-    }
-
-    .warning {
-      margin: 1rem -0.75rem;
-      padding: 0.75rem 1rem;
-      border-radius: 0;
-    }
-
-    .alert {
-      margin: 1rem -0.75rem;
-      padding: 0.75rem 1rem;
-      border-radius: 0;
-    }
-
-    .content-link {
-      display: block;
-      padding: 0.75rem;
-      margin: 0.75rem -0.75rem;
-      background: #f8f9fa;
-      text-align: center;
-    }
-  }
-
-  /* Touch-friendly lists */
-  @media (hover: none) {
-    .fact-list li, .tool-list li, .legal-links li {
-      padding: 0.5rem 0;
-    }
-
-    .fact-list a, .tool-list a, .legal-links a {
-      display: inline-block;
-      padding: 0.5rem 0;
-    }
-  }
-
-  .main-content {
-    font-size: 1.1rem;
-    line-height: 1.6;
-  }
-
-  header {
-    margin-bottom: 2rem;
-  }
-
-  h1 {
-    font-size: 2.5rem;
-    line-height: 1.2;
-    margin-bottom: 1rem;
-  }
-
   .update-date {
     color: #666;
     font-size: 1.1rem;
-  }
-
-  .alert {
-    background: #fff3cd;
-    border: 1px solid #ffeeba;
-    padding: 1.5rem;
-    border-radius: 8px;
-    margin: 2rem 0;
   }
 
   .toc {
@@ -384,17 +422,6 @@
 
   .internal-links .primary-link:hover {
     background: #0056b3;
-  }
-
-  @media (max-width: 768px) {
-    h1 {
-      font-size: 2rem;
-    }
-  }
-
-  section {
-    margin: 3rem 0;
-    padding-top: 1rem;
   }
 
   .fact-list, .tool-list, .verified-list, .scam-list {
@@ -462,157 +489,7 @@
     margin: 1.2rem 0 0.8rem;
   }
 
-  .breaking-news {
-    background: linear-gradient(135deg, #000000, #1a0000);
-    color: white;
-    padding: 1.5rem;
-    border-radius: 16px;
-    margin: 2rem 0;
-    position: relative;
-    border: 3px solid #FF0000;
-    box-shadow: 0 0 20px rgba(255, 0, 0, 0.3);
-  }
-
   .breaking-news.primary {
     background: linear-gradient(135deg, #000000, #330000);
-  }
-
-  .breaking-news.secondary {
-    background: linear-gradient(135deg, #FF0000, #CC0000);
-    margin: 1rem 0;
-  }
-
-  .breaking-news .badge {
-    display: inline-block;
-    background: #FF0000;
-    color: white;
-    padding: 0.25rem 0.75rem;
-    border-radius: 20px;
-    font-weight: bold;
-    font-size: 0.9rem;
-    margin-bottom: 0.75rem;
-    animation: pulse 2s infinite;
-  }
-
-  .breaking-news .telegram-cta {
-    text-align: center;
-  }
-
-  .breaking-news .telegram-link {
-    display: block;
-    background: #FF0000;
-    color: white;
-    text-decoration: none;
-    padding: 1.25rem;
-    border-radius: 12px;
-    margin: 1rem 0;
-    text-align: center;
-    font-weight: 900;
-    font-size: 1.4rem;
-    text-transform: uppercase;
-    transition: all 0.3s;
-    border: 2px solid rgba(255,255,255,0.3);
-    box-shadow: 0 4px 15px rgba(255, 0, 0, 0.4);
-    animation: buttonPulse 2s infinite;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
-    letter-spacing: 0.5px;
-  }
-
-  .breaking-news .telegram-link:hover {
-    background: #FF1a1a;
-    transform: scale(1.03);
-    box-shadow: 0 6px 20px rgba(255, 0, 0, 0.6);
-  }
-
-  .breaking-news .must-join {
-    color: #FFD700;
-    font-weight: bold;
-    margin: 0.75rem 0;
-    font-size: 1.1rem;
-    text-transform: uppercase;
-    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
-  }
-
-  .breaking-news .stats-box {
-    background: rgba(255,255,255,0.1);
-    padding: 1rem;
-    border-radius: 8px;
-    margin: 1rem 0;
-    border: 1px solid rgba(255,255,255,0.2);
-  }
-
-  .breaking-news .stats-box p {
-    margin: 0.5rem 0;
-    color: #fff;
-    font-size: 1.1rem;
-    font-weight: 500;
-  }
-
-  .breaking-news .limited-spots {
-    color: #FF0000;
-    font-weight: 900;
-    font-size: 1.2rem;
-    margin-top: 1rem;
-    text-transform: uppercase;
-    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
-  }
-
-  @keyframes pulse {
-    0% { transform: scale(1); opacity: 1; }
-    50% { transform: scale(1.05); opacity: 0.9; }
-    100% { transform: scale(1); opacity: 1; }
-  }
-
-  @keyframes buttonPulse {
-    0% { transform: scale(1); }
-    50% { transform: scale(1.02); }
-    100% { transform: scale(1); }
-  }
-
-  @media (max-width: 768px) {
-    .breaking-news {
-      margin: 1.5rem 0.75rem;
-      border-radius: 12px;
-      padding: 1.25rem;
-      border-width: 2px;
-    }
-
-    .breaking-news.secondary {
-      margin: 1rem 0.75rem;
-    }
-
-    .breaking-news .telegram-link {
-      font-size: 1.2rem;
-      padding: 1rem;
-      border-radius: 10px;
-      margin: 0.75rem 0;
-    }
-
-    .breaking-news .must-join {
-      font-size: 1rem;
-      margin: 0.5rem 0;
-    }
-
-    .breaking-news .stats-box {
-      padding: 0.75rem;
-      margin: 0.75rem 0;
-      border-radius: 6px;
-    }
-
-    .breaking-news .stats-box p {
-      font-size: 1rem;
-      margin: 0.4rem 0;
-    }
-
-    .breaking-news .limited-spots {
-      font-size: 1.1rem;
-      margin-top: 0.75rem;
-    }
-
-    .breaking-news .badge {
-      font-size: 0.85rem;
-      padding: 0.2rem 0.6rem;
-      margin-bottom: 0.6rem;
-    }
   }
 </style> 
