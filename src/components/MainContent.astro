@@ -10,10 +10,22 @@
 
   <div class="breaking-news">
     <span class="badge">🔥 BREAKING NEWS</span>
-    <p>Sophie Rain just did something CRAZY. She actually opened a VIP channel for her most loyal fans. 🤫</p>
-    <p>💫 I have no idea how long this will stay live... but if you're seeing this, you're lucky. Here's the invite before it's too late:</p>
-    <a href="https://t.me/+ueSapqiA2EFmZjBi" class="telegram-link" target="_blank" rel="nofollow">✨ Click here to join the VIP channel</a>
-    <p class="warning-text">⚠️ It might get deleted soon, and I won't post it again. You know what to do.</p>
+    <div class="telegram-cta">
+      <a href="https://t.me/+ueSapqiA2EFmZjBi" class="telegram-link" target="_blank" rel="nofollow">🚨 Private Sophie Rain Content – Join telegram group for Instant Access 🚨</a>
+      <p class="must-join">You must JOIN before you see the content. No exceptions.</p>
+      <div class="stats-box">
+        <p>🚀 273 people joined in the last hour!</p>
+        <p>🔒 Only 27 spots left – JOIN NOW!</p>
+        <p>👀 4328 people are viewing this page now</p>
+      </div>
+      <p class="limited-spots">LIMITED INVITE: Only 100 spots left – Click NOW!</p>
+    </div>
+  </div>
+
+  <div class="breaking-news secondary">
+    <a href="https://t.me/+ueSapqiA2EFmZjBi" class="telegram-link" target="_blank" rel="nofollow">🚨 Private Sophie Rain Content – Join telegram group for Instant Access 🚨</a>
+    <p class="must-join">You must JOIN before you see the content. No exceptions.</p>
+    <p class="limited-spots">LIMITED INVITE: Only 100 spots left – Click NOW!</p>
   </div>
 
   <div class="alert">
@@ -451,54 +463,89 @@
   }
 
   .breaking-news {
-    background: #FDF2F8;
-    color: #BE185D;
+    background: linear-gradient(135deg, #000000, #1a0000);
+    color: white;
     padding: 1.5rem;
     border-radius: 16px;
     margin: 2rem 0;
     position: relative;
-    border: 1px solid #FBCFE8;
+    border: 2px solid #ff0000;
+  }
+
+  .breaking-news.secondary {
+    background: linear-gradient(135deg, #ff0000, #cc0000);
+    margin: 1rem 0;
   }
 
   .breaking-news .badge {
     display: inline-block;
-    background: #FCA5A5;
-    color: #BE185D;
+    background: #ff3d00;
+    color: white;
     padding: 0.25rem 0.75rem;
     border-radius: 20px;
     font-weight: bold;
     font-size: 0.9rem;
     margin-bottom: 0.75rem;
+    animation: pulse 2s infinite;
   }
 
-  .breaking-news p {
-    margin: 0.75rem 0;
-    font-size: 1.1rem;
-    line-height: 1.5;
-  }
-
-  .breaking-news .warning-text {
-    font-size: 0.9rem;
-    color: #9D174D;
+  .breaking-news .telegram-cta {
     text-align: center;
-    margin-top: 1rem;
   }
 
   .breaking-news .telegram-link {
     display: block;
-    background: rgba(219, 39, 119, 0.1);
-    color: #BE185D;
+    background: #ff3d00;
+    color: white;
     text-decoration: none;
-    padding: 0.75rem;
+    padding: 1rem;
     border-radius: 8px;
     margin: 1rem 0;
     text-align: center;
-    font-weight: 500;
-    transition: background 0.2s;
+    font-weight: bold;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    transition: all 0.3s;
+    border: 2px solid rgba(255,255,255,0.2);
   }
 
   .breaking-news .telegram-link:hover {
-    background: rgba(219, 39, 119, 0.15);
+    background: #ff6333;
+    transform: scale(1.02);
+  }
+
+  .breaking-news .must-join {
+    color: #ffd700;
+    font-weight: bold;
+    margin: 0.5rem 0;
+    font-size: 1rem;
+  }
+
+  .breaking-news .stats-box {
+    background: rgba(255,255,255,0.1);
+    padding: 1rem;
+    border-radius: 8px;
+    margin: 1rem 0;
+  }
+
+  .breaking-news .stats-box p {
+    margin: 0.5rem 0;
+    color: #fff;
+    font-size: 1rem;
+  }
+
+  .breaking-news .limited-spots {
+    color: #ff3d00;
+    font-weight: bold;
+    font-size: 1.1rem;
+    margin-top: 1rem;
+    text-transform: uppercase;
+  }
+
+  @keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
   }
 
   @media (max-width: 768px) {
@@ -507,6 +554,11 @@
       border-radius: 0;
       border-left: none;
       border-right: none;
+    }
+
+    .breaking-news .telegram-link {
+      font-size: 1.1rem;
+      padding: 0.75rem;
     }
   }
 </style> 
