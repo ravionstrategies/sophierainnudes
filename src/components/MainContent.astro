@@ -22,8 +22,8 @@
         width="1280"
         height="720"
       />
-      <div class="play-button">
-        <svg viewBox="0 0 24 24" fill="white">
+      <div class="play-button" role="button" tabindex="0">
+        <svg viewBox="0 0 24 24" fill="white" aria-hidden="true">
           <path d="M8 5v14l11-7z"/>
         </svg>
       </div>
@@ -298,17 +298,25 @@
     justify-content: center;
     cursor: pointer;
     transition: transform 0.2s ease;
+    z-index: 10;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .play-button:hover,
+  .play-button:focus {
+    transform: translate(-50%, -50%) scale(1.1);
+    background: rgba(255,0,0,0.8);
+    outline: none;
+  }
+
+  .play-button:active {
+    transform: translate(-50%, -50%) scale(0.95);
   }
 
   .play-button svg {
     width: 40px;
     height: 40px;
     margin-left: 4px;
-  }
-
-  .play-button:hover {
-    transform: translate(-50%, -50%) scale(1.1);
-    background: rgba(255,0,0,0.8);
   }
 
   .video-overlay {
