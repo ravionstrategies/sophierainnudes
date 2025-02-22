@@ -218,12 +218,11 @@
 </script>
 
 <style>
-  /* Critical styles first */
+  /* Critical styles only */
   .main-content {
     font-size: 1.1rem;
     line-height: 1.6;
     max-width: 100%;
-    overflow-x: hidden;
   }
 
   h1 {
@@ -232,18 +231,17 @@
     margin-bottom: 1rem;
   }
 
-  /* Breaking news optimized */
   .breaking-news {
     background: #1a0000;
     color: white;
     padding: 1.25rem;
     border-radius: 12px;
-    margin: 1.5rem 0;
+    margin: 1.5rem auto;
     border: 2px solid #FF0000;
-    box-shadow: 0 2px 8px rgba(255, 0, 0, 0.2);
+    max-width: 800px;
   }
 
-  .breaking-news .badge {
+  .badge {
     display: inline-block;
     background: #FF0000;
     color: white;
@@ -254,27 +252,22 @@
     margin-bottom: 0.75rem;
   }
 
-  .breaking-news .telegram-link {
+  .telegram-link {
     display: block;
     background: #FF0000;
     color: white;
     text-decoration: none;
     padding: 1rem;
     border-radius: 8px;
-    margin: 0.75rem 0;
+    margin: 0.75rem auto;
     text-align: center;
     font-weight: 900;
     font-size: 1.2rem;
     text-transform: uppercase;
-    border: 1px solid rgba(255,255,255,0.2);
-    will-change: transform;
+    max-width: 600px;
   }
 
-  .breaking-news .telegram-link:active {
-    transform: scale(0.98);
-  }
-
-  .breaking-news .must-join {
+  .must-join {
     color: #FFD700;
     font-weight: bold;
     margin: 0.75rem 0;
@@ -282,20 +275,20 @@
     text-transform: uppercase;
   }
 
-  .breaking-news .stats-box {
+  .stats-box {
     background: rgba(255,255,255,0.05);
     padding: 0.75rem;
     border-radius: 6px;
     margin: 0.75rem 0;
   }
 
-  .breaking-news .stats-box p {
+  .stats-box p {
     margin: 0.4rem 0;
     color: #fff;
     font-size: 1rem;
   }
 
-  .breaking-news .limited-spots {
+  .limited-spots {
     color: #FF0000;
     font-weight: 900;
     font-size: 1.1rem;
@@ -303,193 +296,11 @@
     text-transform: uppercase;
   }
 
-  /* Alert box */
-  .alert {
-    background: #fff3cd;
-    border: 1px solid #ffeeba;
-    padding: 1.25rem;
-    border-radius: 8px;
-    margin: 1.5rem 0;
-  }
-
-  /* Table of contents */
-  .toc {
-    background: #f8f9fa;
-    padding: 1.25rem;
-    border-radius: 8px;
-    margin: 1.5rem 0;
-  }
-
-  .toc ol {
-    padding-left: 1.25rem;
-  }
-
-  .toc a {
-    color: #333;
-    text-decoration: none;
-    line-height: 1.6;
-    display: block;
-    padding: 0.25rem 0;
-  }
-
-  /* Content sections */
-  section {
-    margin: 2rem 0;
-    padding-top: 0.5rem;
-  }
-
-  /* Reduced motion */
-  @media (prefers-reduced-motion: reduce) {
-    .breaking-news .telegram-link {
-      transition: none;
-    }
-  }
-
-  /* Mobile optimizations */
+  /* Non-critical styles moved to external CSS */
   @media (max-width: 768px) {
     .breaking-news {
       margin: 1rem 0.5rem;
       padding: 1rem;
     }
-
-    .toc {
-      margin: 1rem 0;
-      padding: 1rem;
-    }
-
-    .alert {
-      margin: 1rem 0;
-      padding: 1rem;
-    }
-  }
-
-  /* Base styles */
-  .main-content {
-    max-width: 100%;
-    overflow-x: hidden;
-  }
-
-  .update-date {
-    color: #666;
-    font-size: 1.1rem;
-  }
-
-  .toc {
-    background: #f8f9fa;
-    padding: 1.5rem;
-    border-radius: 8px;
-    margin: 2rem 0;
-  }
-
-  .toc ol {
-    padding-left: 1.5rem;
-  }
-
-  .toc a {
-    color: #333;
-    text-decoration: none;
-    line-height: 1.8;
-  }
-
-  .toc a:hover {
-    text-decoration: underline;
-  }
-
-  .internal-links {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    margin-top: 1rem;
-  }
-
-  .internal-links a {
-    color: #333;
-    text-decoration: none;
-    padding: 0.5rem 1rem;
-    border-radius: 4px;
-    background: #f8f9fa;
-    transition: background 0.2s;
-  }
-
-  .internal-links a:hover {
-    background: #e9ecef;
-  }
-
-  .internal-links .primary-link {
-    background: #007bff;
-    color: white;
-  }
-
-  .internal-links .primary-link:hover {
-    background: #0056b3;
-  }
-
-  .fact-list, .tool-list, .verified-list, .scam-list {
-    list-style: none;
-    padding: 0;
-    margin: 1.5rem 0;
-  }
-
-  .fact-list li, .tool-list li {
-    margin: 1rem 0;
-    padding-left: 2rem;
-    position: relative;
-  }
-
-  .warning {
-    background: #dc3545;
-    color: white;
-    padding: 1rem;
-    border-radius: 8px;
-    margin: 1.5rem 0;
-  }
-
-  .content-link {
-    display: inline-block;
-    margin: 1rem 0;
-    color: #007bff;
-    text-decoration: none;
-    font-weight: 500;
-  }
-
-  .content-link:hover {
-    text-decoration: underline;
-  }
-
-  .legal-links {
-    list-style: none;
-    padding: 0;
-  }
-
-  .legal-links li {
-    margin: 0.5rem 0;
-  }
-
-  .legal-links a {
-    color: #666;
-    text-decoration: none;
-  }
-
-  .legal-links a:hover {
-    text-decoration: underline;
-  }
-
-  h2 {
-    font-size: 1.8rem;
-    margin: 2rem 0 1rem;
-  }
-
-  h3 {
-    font-size: 1.4rem;
-    margin: 1.5rem 0 1rem;
-  }
-
-  h4 {
-    font-size: 1.2rem;
-    margin: 1.2rem 0 0.8rem;
-  }
-
-  .breaking-news.primary {
-    background: linear-gradient(135deg, #000000, #330000);
   }
 </style> 
