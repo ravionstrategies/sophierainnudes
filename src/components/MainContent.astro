@@ -13,7 +13,19 @@
       <div class="progress-bar-fill"></div>
     </div>
     <div class="video-player">
-      <img src="@image.jpg" alt="Content Preview" class="video-thumbnail" />
+      <picture>
+        <source srcset="/images/gallery-1.webp" type="image/webp" />
+        <source srcset="/images/gallery-1-1280.jpg" type="image/jpeg" />
+        <img 
+          src="/images/gallery-1-1280.jpg" 
+          alt="Content Preview" 
+          class="video-thumbnail" 
+          loading="eager" 
+          fetchpriority="high"
+          width="1280"
+          height="720"
+        />
+      </picture>
       <div class="play-button">
         <svg viewBox="0 0 24 24" fill="white">
           <path d="M8 5v14l11-7z"/>
