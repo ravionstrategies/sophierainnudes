@@ -22,29 +22,30 @@
         width="1280"
         height="720"
       />
-      <a href="/" class="play-button-wrapper">
-        <div class="play-button" role="button" tabindex="0">
-          <svg viewBox="0 0 24 24" fill="white" aria-hidden="true">
+      <a href="/" class="play-button-wrapper" aria-label="Play video preview" role="button">
+        <div class="play-button">
+          <svg viewBox="0 0 24 24" fill="white" aria-hidden="true" role="img">
             <path d="M8 5v14l11-7z"/>
           </svg>
+          <span class="sr-only">Play Video</span>
         </div>
       </a>
-      <div class="video-overlay">
-        <div class="video-time">12:47</div>
-        <div class="video-quality">HD</div>
+      <div class="video-overlay" aria-label="Video information">
+        <div class="video-time" role="status">Duration: 12:47</div>
+        <div class="video-quality" role="status">Quality: HD</div>
       </div>
     </div>
   </div>
 
-  <div class="alert">
-    <h3>🚨 Before You Scroll – Hidden Surprise Inside!</h3>
+  <div class="alert" role="alert">
+    <h2>🚨 Before You Scroll – Hidden Surprise Inside!</h2>
     <p>There's a <strong>hidden video</strong> on this page you've <strong>never seen before.</strong></p>
     <p>Go find it. <em>(I promise it's not difficult – thank me later 😉)</em></p>
   </div>
 
-  <nav class="toc">
-    <h2>📌 Table of Contents</h2>
-    <ol>
+  <nav class="toc" aria-label="Table of Contents">
+    <h2 id="toc-heading">📌 Table of Contents</h2>
+    <ol aria-labelledby="toc-heading">
       <li><a href="#introduction-who-is-sophie-rain">Introduction: Who is Sophie Rain?</a></li>
       <li><a href="#the-truth-behind-sophie-rains-leaked-nudes">The Truth Behind Sophie Rain's Leaked Nudes</a></li>
       <li><a href="#the-dark-side-of-ai--deepfake-leaks">The Dark Side of AI & Deepfake Leaks</a></li>
@@ -172,17 +173,17 @@
 
     <p>🚨 <strong>If you believe copyrighted material has been shared unlawfully, visit our <a href="/dmca/">DMCA page</a> for removal requests.</strong></p>
 
-    <h3>🔗 Legal Pages:</h3>
-    <ul class="legal-links">
-      <li>📜 <a href="/privacy-policy/">Privacy Policy</a></li>
+    <h3 id="legal-nav">🔗 Legal Pages:</h3>
+    <ul class="legal-links" aria-labelledby="legal-nav">
+      <li>�� <a href="/privacy-policy/">Privacy Policy</a></li>
       <li>📜 <a href="/terms-of-service/">Terms of Service</a></li>
       <li>📜 <a href="/contact/">Contact Us</a></li>
     </ul>
   </section>
 
   <footer>
-    <h2>🔗 Internal Link Priority for SEO Boost</h2>
-    <nav class="internal-links">
+    <h2 id="related-links">🔗 Related Content</h2>
+    <nav class="internal-links" aria-labelledby="related-links">
       <a href="/sophie-rain-leaked-nudes/" class="primary-link">Sophie Rain Leaked Nudes →</a>
       <a href="/sophie-rain-onlyfans-leaks/">Sophie Rain OnlyFans Leaks →</a>
       <a href="/sophie-rain-ai-generated-nudes/">AI-Generated Fake Leaks →</a>
@@ -373,5 +374,46 @@
       right: 12px;
       font-size: 12px;
     }
+  }
+
+  /* Accessibility styles */
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+
+  /* Improve touch target sizes */
+  .play-button-wrapper {
+    min-width: 44px;
+    min-height: 44px;
+    padding: 12px;
+  }
+
+  @media (max-width: 768px) {
+    .play-button-wrapper {
+      min-width: 48px;
+      min-height: 48px;
+      padding: 16px;
+    }
+  }
+
+  /* High contrast focus styles */
+  .play-button-wrapper:focus {
+    outline: 3px solid #fff;
+    outline-offset: 2px;
+  }
+
+  .content-link:focus,
+  .primary-link:focus,
+  .legal-links a:focus {
+    outline: 3px solid #0066cc;
+    outline-offset: 2px;
   }
 </style> 
