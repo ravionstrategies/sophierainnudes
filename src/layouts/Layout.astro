@@ -53,6 +53,7 @@ const criticalCSS = `
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		
 		<!-- Google Analytics -->
@@ -99,8 +100,8 @@ const criticalCSS = `
 
 		<!-- Compression & Cache Headers -->
 		<meta http-equiv="Content-Encoding" content="br, gzip" />
-		<meta http-equiv="Cache-Control" content="max-age=31536000, immutable" />
 		<meta http-equiv="Accept-Encoding" content="gzip, deflate, br" />
+		<meta http-equiv="Cache-Control" content="max-age=31536000, immutable" />
 		
 		<!-- Preload critical assets -->
 		<link rel="preload" href={ogImage} as="image" fetchpriority="high" />
@@ -140,9 +141,6 @@ const criticalCSS = `
 			},
 			"keywords": keywords.split(",").map(k => k.trim())
 		})} />
-
-		<!-- Cache Control -->
-		<meta http-equiv="Cache-Control" content="max-age=31536000" />
 		
 		<!-- Critical CSS -->
 		<style set:html={criticalCSS}></style>
