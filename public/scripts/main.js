@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // Preconnect to important third-party domains
   const domains = [
     'https://www.googletagmanager.com',
-    'https://js.juicyads.com'
+    '//pl25942840.effectiveratecpm.com'
   ];
   
   domains.forEach(domain => {
