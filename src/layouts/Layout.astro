@@ -242,8 +242,36 @@ const criticalCSS = `
 		<link rel="preconnect" href="//pl25942840.effectiveratecpm.com" crossorigin>
 	</head>
 	<body>
-		<!-- Adsterra Popunder -->
-		<script type='text/javascript' src='//pl25942840.effectiveratecpm.com/69/b6/ca/69b6cac308dc1553c255b5bead32ca54.js'></script>
+		<!-- Optimized Adsterra Implementation -->
+		<script>
+			// Delay popunder initialization
+			window.addEventListener('load', function() {
+				setTimeout(function() {
+					// Only show popunder on specific user interactions
+					let popunderTriggered = false;
+					const triggerPopunder = function() {
+						if (!popunderTriggered) {
+							const script = document.createElement('script');
+							script.type = 'text/javascript';
+							script.src = '//pl25942840.effectiveratecpm.com/69/b6/ca/69b6cac308dc1553c255b5bead32ca54.js';
+							document.body.appendChild(script);
+							popunderTriggered = true;
+						}
+					};
+
+					// Trigger on meaningful interactions only
+					document.querySelectorAll('a, button').forEach(element => {
+						element.addEventListener('click', function(e) {
+							const target = e.target as HTMLElement;
+							if (target && (target.classList.contains('content-link') || 
+								target.classList.contains('primary-link'))) {
+								triggerPopunder();
+							}
+						});
+					});
+				}, 2000); // 2 second delay for better user experience
+			});
+		</script>
 
 		<!-- Page Content -->
 		<HomeButton />
