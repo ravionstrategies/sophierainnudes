@@ -8,40 +8,10 @@
     <div class="update-date">📅 Updated: February 2025</div>
   </header>
 
-  <div class="video-container">
-    <div class="progress-bar">
-      <div class="progress-bar-fill"></div>
-    </div>
-    <div class="video-player">
-      <img 
-        src="/images/image.webp" 
-        alt="Content Preview" 
-        class="video-thumbnail" 
-        loading="eager" 
-        fetchpriority="high"
-        decoding="sync"
-        width="1280"
-        height="720"
-      />
-      <a href="/" class="play-button-wrapper" aria-label="Play video preview" role="button">
-        <div class="play-button">
-          <svg viewBox="0 0 24 24" fill="white" aria-hidden="true" role="img">
-            <path d="M8 5v14l11-7z"/>
-          </svg>
-          <span class="sr-only">Play Video</span>
-        </div>
-      </a>
-      <div class="video-overlay" aria-label="Video information">
-        <div class="video-time" role="status">Duration: 12:47</div>
-        <div class="video-quality" role="status">Quality: HD</div>
-      </div>
-    </div>
-  </div>
-
   <div class="alert" role="alert">
-    <h2>🚨 Before You Scroll – Hidden Surprise Inside!</h2>
-    <p>There's a <strong>hidden video</strong> on this page you've <strong>never seen before.</strong></p>
-    <p>Go find it. <em>(I promise it's not difficult – thank me later 😉)</em></p>
+    <h2>🚨 Important Notice</h2>
+    <p>This page contains <strong>exclusive content</strong> and <strong>important information</strong>.</p>
+    <p>Please read carefully for the most accurate and up-to-date details.</p>
   </div>
 
   <nav class="toc" aria-label="Table of Contents">
@@ -176,7 +146,7 @@
 
     <h3 id="legal-nav">🔗 Legal Pages:</h3>
     <ul class="legal-links" aria-labelledby="legal-nav">
-      <li>�� <a href="/privacy-policy/">Privacy Policy</a></li>
+      <li>📜 <a href="/privacy-policy/">Privacy Policy</a></li>
       <li>📜 <a href="/terms-of-service/">Terms of Service</a></li>
       <li>📜 <a href="/contact/">Contact Us</a></li>
     </ul>
@@ -248,137 +218,20 @@
     margin-bottom: 1rem;
   }
 
-  /* Video Player Styles */
-  .video-container {
-    position: relative;
-    width: 100%;
-    max-width: 800px;
-    margin: 1.5rem auto;
-    background: #000;
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-  }
-
-  .progress-bar {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 4px;
-    background: rgba(255,255,255,0.2);
-    z-index: 2;
-  }
-
-  .progress-bar-fill {
-    width: 35%;
-    height: 100%;
-    background: #FF0000;
-  }
-
-  .video-player {
-    position: relative;
-    width: 100%;
-    aspect-ratio: 16/9;
-    contain: layout size;
-    will-change: transform;
-  }
-
-  .video-thumbnail {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-    backface-visibility: hidden;
-    transform: translateZ(0);
-  }
-
-  .play-button-wrapper {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 70px;
-    height: 70px;
-    z-index: 10;
-    display: block;
-    text-decoration: none;
-  }
-
-  .play-button {
-    width: 100%;
-    height: 100%;
-    background: rgba(0,0,0,0.7);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    transition: transform 0.2s ease;
-    -webkit-tap-highlight-color: transparent;
-  }
-
-  .play-button-wrapper:hover .play-button,
-  .play-button-wrapper:focus .play-button {
-    transform: scale(1.1);
-    background: rgba(255,0,0,0.8);
-  }
-
-  .play-button-wrapper:active .play-button {
-    transform: scale(0.95);
-  }
-
-  .play-button svg {
-    width: 40px;
-    height: 40px;
-    margin-left: 4px;
-  }
-
-  .video-overlay {
-    position: absolute;
-    bottom: 16px;
-    right: 16px;
-    display: flex;
-    gap: 8px;
+  .alert {
+    background: #1a0000;
     color: white;
-    font-size: 14px;
-    font-weight: bold;
-    text-shadow: 0 1px 2px rgba(0,0,0,0.5);
+    padding: 1.25rem;
+    border-radius: 12px;
+    margin: 1.5rem auto;
+    border: 2px solid #FF0000;
+    max-width: 800px;
   }
 
-  .video-time {
-    background: rgba(0,0,0,0.7);
-    padding: 4px 8px;
-    border-radius: 4px;
-  }
-
-  .video-quality {
-    background: #FF0000;
-    padding: 4px 8px;
-    border-radius: 4px;
-  }
-
-  /* Mobile optimizations */
   @media (max-width: 768px) {
-    .video-container {
+    .alert {
       margin: 1rem 0;
-      border-radius: 8px;
-    }
-
-    .play-button-wrapper {
-      width: 50px;
-      height: 50px;
-    }
-
-    .play-button svg {
-      width: 30px;
-      height: 30px;
-    }
-
-    .video-overlay {
-      bottom: 12px;
-      right: 12px;
-      font-size: 12px;
+      padding: 1rem;
     }
   }
 
