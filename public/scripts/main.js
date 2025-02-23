@@ -24,8 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
 document.addEventListener('DOMContentLoaded', () => {
   // Preconnect to important third-party domains
   const domains = [
-    'https://www.googletagmanager.com',
-    '//pl25942840.effectiveratecpm.com'
+    'https://www.googletagmanager.com'
   ];
   
   domains.forEach(domain => {
