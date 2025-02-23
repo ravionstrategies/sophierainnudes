@@ -35,7 +35,16 @@ export default defineConfig({
       Image: true,
       SVG: true
     }),
-    sitemap()
+    sitemap({
+      filter: (page) => !page.includes('www'),
+      changefreq: 'daily',
+      priority: 0.7,
+      lastmod: new Date(),
+      serialize: (item) => ({
+        ...item,
+        url: item.url.replace('www.', '')
+      })
+    })
   ],
   vite: {
     build: {
